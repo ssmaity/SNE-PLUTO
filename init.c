@@ -44,7 +44,6 @@ void Init (double *v, double x1, double x2, double x3)
   double unitrho = UNIT_DENSITY;
   double unitprs = UNIT_DENSITY *(UNIT_VELOCITY*UNIT_VELOCITY) ;
 
-
   v[RHO] = g_inputParam[RHO_AMB]/unitrho;
   v[VX1] = 0.0;
   v[VX2] = 0.0;
@@ -58,8 +57,9 @@ void Init (double *v, double x1, double x2, double x3)
   r_inj = 0.02; // pc
   double v_inj = (4./3.)*CONST_PI * pow(r_inj * CONST_pc,3.); // cc
 
-  if(x1<= r_inj){
-   v[PRS] = g_inputParam[ESN]/v_inj *(g_gamma - 1) / unitprs;
+  if(x1<= r_inj)
+  {
+    v[PRS] = g_inputParam[ESN]/v_inj *(g_gamma - 1) / unitprs;
   }
 
 
