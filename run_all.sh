@@ -1,9 +1,27 @@
 echo 'Analysis module starting...'
+
 ./files.sh
-echo 'Data files found!'
+
+if [$? -eq 0]; then
+    echo 'Data files found. Going to next step...'
+else
+    echo 'Error: No data files exist!'
+fi
+
 python3 file_names.py > newfiles.dat
-echo 'Extracting data from files!'
+
+echo 'Extracting data from files. Going to next step...'
+
 python3 extract_rdata.py > rdata.dat
-echo 'Extraction of data from files successful!'
+if [$? -eq 0]; then
+   echo 'Extraction of data from files successful. Going to next step...'
+else
+    echo 'Error: Problem in extracting data!'
+fi
+
 python3 plot_numerical.py
-echo 'Image saved successfully!'
+if [$? -eq 0]; then
+   echo 'Process completed. Image saved successfully!'
+else
+    echo 'Error: Can't generate image!'
+fi
