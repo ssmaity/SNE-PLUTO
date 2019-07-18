@@ -1,5 +1,5 @@
 # SNe-PLUTO
-Supernova explosion using PLUTO Code.
+Propagation of blast due to Supernova explosion using PLUTO Code.
 
 PLUTO solves fluid equations by Godunov type schemes using a conservative discretization based on finite volume or finite difference methods.
 
