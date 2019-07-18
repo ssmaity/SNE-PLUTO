@@ -1,0 +1,1 @@
+ls *.tab > files.dat
